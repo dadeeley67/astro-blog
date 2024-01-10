@@ -1,6 +1,9 @@
 ---
 import "../styles/global.css";
 
+import Header from "../components/Header.astro";
+import Footer from "../components/Footer.astro";
+
 const pageTitle = "Blog Updates!";
 ---
 
@@ -17,11 +20,7 @@ const pageTitle = "Blog Updates!";
             }
         </style>
     </head>
-    <header>
-        <a href="/">Home</a>
-        <a href="/about/">About</a>
-        <a href="/blog/">Blog</a>
-    </header>
+    <Header />
     <body>
         <h1>Blog Updates!</h1>
         <h2>... what do I REALLY have to say?</h2>
@@ -43,6 +42,8 @@ const pageTitle = "Blog Updates!";
             <li><a href="/posts/post-3">Post 3</a></li>
         </ul>
     </body>
-
-
+    <Footer />
+    <script>
+        import "../scripts/menu.js";
+    </script>
 </html>
