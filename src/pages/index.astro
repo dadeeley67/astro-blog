@@ -1,5 +1,12 @@
 ---
+import "../styles/global.css";
+
 const pageTitle = "Home page";
+
+let firstNumber = 11;
+let secondNumber = 20;
+
+const total = firstNumber + secondNumber;
 ---
 
 <html lang="en">
@@ -9,6 +16,11 @@ const pageTitle = "Home page";
 		<meta name="viewport" content="width=device-width" />
 		<meta name="generator" content={Astro.generator} />
 		<title>{pageTitle}</title>
+		<style>
+			h1 {
+				color: violet;
+			}
+		</style>
 	</head>
 	<header>
 		<a href="/">Home</a>
@@ -17,6 +29,11 @@ const pageTitle = "Home page";
 	</header>
 	<body>
 		<h1>My very own Astro blog, woo!</h1>
+		<p>
+			First number: {firstNumber} + Second number: {secondNumber} = {
+				total
+			}
+		</p>
 	</body>
 
 

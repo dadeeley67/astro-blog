@@ -1,4 +1,6 @@
 ---
+import "../styles/global.css";
+
 const pageTitle = "Blog Updates!";
 ---
 
@@ -9,6 +11,11 @@ const pageTitle = "Blog Updates!";
         <meta name="viewport" content="width=device-width" />
         <meta name="generator" content={Astro.generator} />
         <title>{pageTitle}</title>
+        <style>
+            h1 {
+                color: darkred;
+            }
+        </style>
     </head>
     <header>
         <a href="/">Home</a>
