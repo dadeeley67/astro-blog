@@ -1,49 +1,27 @@
 ---
-import "../styles/global.css";
-
-import Header from "../components/Header.astro";
-import Footer from "../components/Footer.astro";
-
+import BaseLayout from "../layouts/BaseLayout.astro";
+import BlogPost from "../components/BlogPost.astro";
+const allPosts = await Astro.glob("../pages/posts/*.md");
 const pageTitle = "Blog Updates!";
 ---
 
-<html lang="en">
-    <head>
-        <meta charset="utf-8" />
-        <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-        <meta name="viewport" content="width=device-width" />
-        <meta name="generator" content={Astro.generator} />
-        <title>{pageTitle}</title>
-        <style>
-            h1 {
-                color: darkred;
-            }
-        </style>
-    </head>
-    <Header />
-    <body>
-        <h1>Blog Updates!</h1>
-        <h2>... what do I REALLY have to say?</h2>
-        <p>
-            Not much, cause I'm super boring and unoriginal. But I'm trying my
-            best! I swear, I am. I wanna be more interesting and have things to
-            say. I used to love writing.
-        </p>
-        <p>
-            But, ya know, what CAN ya do? You can only be who you are, and that
-            is all I'm tryna do.
-        </p>
+<BaseLayout pageTitle={pageTitle}>
+    <h2>... what do I REALLY have to say?</h2>
+    <p>
+        Not much, cause I'm super boring and unoriginal. But I'm trying my best!
+        I swear, I am. I wanna be more interesting and have things to say. I
+        used to love writing.
+    </p>
+    <p>
+        But, ya know, what CAN ya do? You can only be who you are, and that is
+        all I'm tryna do.
+    </p>
 
-        <ul>
-            <li>
-                <a href="/posts/post-1/">Post 1</a>
-            </li>
-            <li><a href="/posts/post-2">Post 2</a></li>
-            <li><a href="/posts/post-3">Post 3</a></li>
-        </ul>
-    </body>
-    <Footer />
-    <script>
-        import "../scripts/menu.js";
-    </script>
-</html>
+    <ul>
+        {
+            allPosts.map((post) => (
+                <BlogPost url={post.url} title={post.frontmatter.title} />
+            ))
+        }
+    </ul>
+</BaseLayout>
