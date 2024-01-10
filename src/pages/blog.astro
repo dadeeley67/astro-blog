@@ -1,5 +1,5 @@
 ---
-
+const pageTitle = "Blog Updates!";
 ---
 
 <html lang="en">
@@ -8,7 +8,7 @@
         <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
         <meta name="viewport" content="width=device-width" />
         <meta name="generator" content={Astro.generator} />
-        <title>Astro</title>
+        <title>{pageTitle}</title>
     </head>
     <header>
         <a href="/">Home</a>
@@ -27,6 +27,14 @@
             But, ya know, what CAN ya do? You can only be who you are, and that
             is all I'm tryna do.
         </p>
+
+        <ul>
+            <li>
+                <a href="/posts/post-1/">Post 1</a>
+            </li>
+            <li><a href="/posts/post-2">Post 2</a></li>
+            <li><a href="/posts/post-3">Post 3</a></li>
+        </ul>
     </body>
 
 
